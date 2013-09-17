@@ -1,0 +1,24 @@
+<h1>Welcome#index</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Number</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <% if user.license.present? %>
+          <td><%= user.license.number %></td>
+          <td><%= user.license.state %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
